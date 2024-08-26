@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 // import java.security.Timestamp;
 import java.util.Date;
 
-import ma.insea.connect.chat.common.chatMessage.ChatMessageDTO;
+import ma.insea.connect.chat.common.chatMessage.DTO.ChatMessageDTO;
 import ma.insea.connect.user.Status;
 import jakarta.persistence.Id;
 

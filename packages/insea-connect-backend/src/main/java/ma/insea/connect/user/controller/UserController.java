@@ -1,13 +1,12 @@
 package ma.insea.connect.user;
 
 import lombok.RequiredArgsConstructor;
-import ma.insea.connect.chat.common.chatMessage.ChatMessageService;
-import ma.insea.connect.chat.conversation.Conversation;
-import ma.insea.connect.chat.conversation.ConversationDTO;
-import ma.insea.connect.chat.conversation.ConversationRepository;
-import ma.insea.connect.chat.conversation.ConversationService;
-import ma.insea.connect.chat.group.GroupDTO2;
-import ma.insea.connect.chat.group.GroupService;
+import ma.insea.connect.chat.common.chatMessage.service.ChatMessageService;
+import ma.insea.connect.chat.conversation.DTO.ConversationDTO;
+import ma.insea.connect.chat.conversation.repository.ConversationRepository;
+import ma.insea.connect.chat.conversation.service.ConversationService;
+import ma.insea.connect.chat.group.DTO.GroupDTO2;
+import ma.insea.connect.chat.group.service.GroupService;
 import ma.insea.connect.keycloak.DTO.AddKeycloakDTO;
 import ma.insea.connect.keycloak.controller.KeyCloakController;
 import ma.insea.connect.keycloak.service.KeyCloakService;
@@ -20,7 +19,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Controller;

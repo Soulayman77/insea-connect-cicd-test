@@ -11,8 +11,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import ma.insea.connect.chat.common.chatMessage.ChatMessageService;
-import ma.insea.connect.chat.common.chatMessage.GroupMessageDTO;
+import ma.insea.connect.chat.common.chatMessage.service.ChatMessageService;
+import ma.insea.connect.chat.common.chatMessage.DTO.GroupMessageDTO;
 import ma.insea.connect.exception.UnauthorizedException;
 import ma.insea.connect.user.User;
 import ma.insea.connect.user.UserDTO3;

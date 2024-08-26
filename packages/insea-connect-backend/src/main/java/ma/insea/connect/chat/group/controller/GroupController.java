@@ -1,8 +1,8 @@
 package ma.insea.connect.chat.group;
 
 import lombok.AllArgsConstructor;
-import ma.insea.connect.chat.common.chatMessage.ChatMessageService;
-import ma.insea.connect.chat.common.chatMessage.GroupMessageDTO;
+import ma.insea.connect.chat.common.chatMessage.service.ChatMessageService;
+import ma.insea.connect.chat.common.chatMessage.DTO.GroupMessageDTO;
 import ma.insea.connect.user.UserDTO3;
 
 import java.util.List;

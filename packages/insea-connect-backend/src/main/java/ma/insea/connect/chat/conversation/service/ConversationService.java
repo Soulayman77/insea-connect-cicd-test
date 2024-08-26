@@ -6,17 +6,20 @@ import java.util.Date;
 import java.util.List;
 import java.util.Collections;
 
+import ma.insea.connect.chat.conversation.DTO.ConversationDTO;
+import ma.insea.connect.chat.conversation.DTO.ConversationDTO2;
+import ma.insea.connect.chat.conversation.repository.ConversationRepository;
 import org.springframework.stereotype.Service;
 
-import ma.insea.connect.chat.common.chatMessage.ChatMessageService;
+import ma.insea.connect.chat.common.chatMessage.service.ChatMessageService;
 import ma.insea.connect.user.User;
 import ma.insea.connect.user.UserDTO2;
 import ma.insea.connect.user.UserRepository;
 import ma.insea.connect.utils.Functions;
-import ma.insea.connect.chat.common.chatMessage.ChatMessage;
-import ma.insea.connect.chat.common.chatMessage.ChatMessageDTO;
-import ma.insea.connect.chat.common.chatMessage.ChatMessageDTO2;
-import ma.insea.connect.chat.common.chatMessage.ChatMessageRepository;
+import ma.insea.connect.chat.common.chatMessage.model.ChatMessage;
+import ma.insea.connect.chat.common.chatMessage.DTO.ChatMessageDTO;
+import ma.insea.connect.chat.common.chatMessage.DTO.ChatMessageDTO2;
+import ma.insea.connect.chat.common.chatMessage.repository.ChatMessageRepository;
 
 
 import lombok.RequiredArgsConstructor;

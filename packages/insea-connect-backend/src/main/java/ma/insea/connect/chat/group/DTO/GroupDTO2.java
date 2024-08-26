@@ -4,7 +4,7 @@ package ma.insea.connect.chat.group;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ma.insea.connect.chat.common.chatMessage.GroupMessageDTO;
+import ma.insea.connect.chat.common.chatMessage.DTO.GroupMessageDTO;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
