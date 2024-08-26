@@ -6,7 +6,7 @@ services:
     ports:
       - 8088:8080
     volumes:
-      - ./keycloak/import:/opt/keycloak/data/import
+      - ./insea-connect-auth-server/keycloak/import:/opt/keycloak/data/import
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
@@ -22,8 +22,6 @@ services:
     networks:
       - backend
 
-
-
   postgres:
     image: postgres:15.5-alpine3.19
     environment:
@@ -37,12 +35,12 @@ services:
 
   flask-app:
     build:
-      context: ../insea-connect-chatbot
+      context: ./insea-connect-chatbot
       dockerfile: Dockerfile
     ports:
       - "5001:5001"
     volumes:
-      - ../insea-connect-chatbot:/app
+      - ./insea-connect-chatbot:/app
     networks:
       - backend
     depends_on:
