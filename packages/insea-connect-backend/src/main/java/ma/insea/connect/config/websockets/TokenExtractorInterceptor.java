@@ -2,6 +2,7 @@ package ma.insea.connect.config.websockets;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -24,6 +25,8 @@ import java.util.Map;
 @Component
 public class TokenExtractorInterceptor implements HandshakeInterceptor {
 
+    @Value("${keycloak.server.url}")
+    private String serverUrl;
     private final RestTemplate restTemplate;
 
     public TokenExtractorInterceptor() {
@@ -67,7 +70,7 @@ public class TokenExtractorInterceptor implements HandshakeInterceptor {
 
         try {
             ResponseEntity<String> response = restTemplate.exchange(
-                    "http://localhost:8088/realms/INSEA-CONNECT/protocol/openid-connect/token/introspect",
+                    serverUrl + "/realms/INSEA-CONNECT/protocol/openid-connect/token/introspect",
                     HttpMethod.POST,
                     request,
                     String.class);

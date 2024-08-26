@@ -6,14 +6,17 @@ spring.datasource.driver-class-name=org.h2.Driver
 server.port=8081
 jwt.auth.converter.resource-id=INSEA-CONNECT-API
 jwt.auth.converter.principal-attribute=preferred_username
+
+keycloak.server.url=http://localhost:8088
+
 spring.security.oauth2.client.registration.keycloak.client-id=INSEA-CONNECT-API
 spring.security.oauth2.client.registration.keycloak.authorization-grant-type=authorization_code
 spring.security.oauth2.client.registration.keycloak.scope=openid
-spring.security.oauth2.client.provider.keycloak.issuer-uri=http://localhost:8088/realms/INSEA-CONNECT
+spring.security.oauth2.client.provider.keycloak.issuer-uri=${keycloak.server.url}/realms/INSEA-CONNECT
 spring.security.oauth2.client.provider.keycloak.user-name-attribute=username
 #spring.security.oauth2.client.registration.keycloak.client-secret=CbE70UdwbImSmMAJu0LyiMd1KZ2mTmjB
 spring.security.oauth2.client.registration.keycloak.client-secret=**********
-spring.security.oauth2.resourceserver.jwt.issuer-uri=http://localhost:8088/realms/INSEA-CONNECT
+spring.security.oauth2.resourceserver.jwt.issuer-uri=${keycloak.server.url}/realms/INSEA-CONNECT
 allowedserver = http://localhost:3000
 spring.servlet.multipart.max-file-size=50MB
 spring.servlet.multipart.max-request-size=50MB
