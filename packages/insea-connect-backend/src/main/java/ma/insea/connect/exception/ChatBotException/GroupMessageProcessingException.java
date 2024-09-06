@@ -1,4 +1,4 @@
-package ma.insea.connect.exception.ChatException;
+package ma.insea.connect.exception.ChatBotException;
 
 public class GroupMessageProcessingException extends ChatbotServiceException {
     public GroupMessageProcessingException(String message) {

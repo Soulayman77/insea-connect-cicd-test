@@ -1,4 +1,4 @@
-package ma.insea.connect.user;
+package ma.insea.connect.user.controller;
 
 import lombok.RequiredArgsConstructor;
 import ma.insea.connect.chat.common.chatMessage.service.ChatMessageService;
@@ -10,8 +10,10 @@ import ma.insea.connect.chat.group.service.GroupService;
 import ma.insea.connect.keycloak.DTO.AddKeycloakDTO;
 import ma.insea.connect.keycloak.controller.KeyCloakController;
 import ma.insea.connect.keycloak.service.KeyCloakService;
-import ma.insea.connect.user.DTO.AddUserDTO;
-import ma.insea.connect.user.DTO.UserInfoResponseDTO;
+import ma.insea.connect.user.DTO.*;
+import ma.insea.connect.user.repository.UserRepository;
+import ma.insea.connect.user.service.UserService;
+import ma.insea.connect.user.model.Status;
 import ma.insea.connect.utils.Functions;
 
 import org.springframework.http.HttpStatus;

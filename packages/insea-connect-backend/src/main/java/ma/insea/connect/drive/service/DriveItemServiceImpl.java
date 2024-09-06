@@ -7,12 +7,10 @@ import ma.insea.connect.drive.model.Folder;
 import ma.insea.connect.drive.repository.DegreePathRepository;
 import ma.insea.connect.drive.repository.DriveItemRepository;
 import ma.insea.connect.drive.repository.FolderRepository;
-import ma.insea.connect.user.DegreePath;
-import ma.insea.connect.user.User;
+import ma.insea.connect.user.model.DegreePath;
+import ma.insea.connect.user.DTO.User;
 import ma.insea.connect.utils.Functions;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;

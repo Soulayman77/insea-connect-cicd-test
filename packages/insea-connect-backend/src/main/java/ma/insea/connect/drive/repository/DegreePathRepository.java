@@ -1,7 +1,6 @@
 package ma.insea.connect.drive.repository;
 
-import ma.insea.connect.user.DegreePath;
-import ma.insea.connect.user.User;
+import ma.insea.connect.user.model.DegreePath;
 
 import java.util.Optional;
 

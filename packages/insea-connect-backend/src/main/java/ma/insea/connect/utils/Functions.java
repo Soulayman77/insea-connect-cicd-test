@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import ma.insea.connect.user.DegreePath;
+import ma.insea.connect.user.model.DegreePath;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
@@ -13,8 +13,8 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import lombok.RequiredArgsConstructor;
-import ma.insea.connect.user.User;
-import ma.insea.connect.user.UserRepository;
+import ma.insea.connect.user.DTO.User;
+import ma.insea.connect.user.repository.UserRepository;
 
 @Component
 @RequiredArgsConstructor

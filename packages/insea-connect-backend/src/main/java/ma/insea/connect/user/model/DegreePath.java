@@ -1,4 +1,4 @@
-package ma.insea.connect.user;
+package ma.insea.connect.user.model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import ma.insea.connect.user.DTO.User;
 
 @Entity
 @Getter

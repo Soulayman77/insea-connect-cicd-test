@@ -1,7 +1,7 @@
 package ma.insea.connect.drive.dto;
 
 import lombok.Data;
-import ma.insea.connect.user.DegreePath;
+import ma.insea.connect.user.model.DegreePath;
 
 import java.time.LocalDateTime;
 

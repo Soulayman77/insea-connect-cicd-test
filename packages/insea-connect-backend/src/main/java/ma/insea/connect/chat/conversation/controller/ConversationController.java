@@ -1,7 +1,9 @@
-package ma.insea.connect.chat.conversation;
+package ma.insea.connect.chat.conversation.controller;
 
 import java.util.List;
 
+import ma.insea.connect.chat.conversation.service.ConversationService;
+import ma.insea.connect.chat.conversation.DTO.ConversationDTO2;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

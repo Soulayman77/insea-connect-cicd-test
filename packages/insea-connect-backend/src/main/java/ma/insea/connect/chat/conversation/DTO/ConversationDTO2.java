@@ -1,8 +1,8 @@
-package ma.insea.connect.chat.conversation;
+package ma.insea.connect.chat.conversation.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import ma.insea.connect.user.UserDTO2;
+import ma.insea.connect.user.DTO.UserDTO2;
 
 @Data
 @AllArgsConstructor

@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import ma.insea.connect.drive.model.File;
 import ma.insea.connect.drive.repository.FileRepository;
 import ma.insea.connect.drive.service.FileServiceImpl;
-import ma.insea.connect.user.User;
+import ma.insea.connect.user.DTO.User;
 import ma.insea.connect.utils.Functions;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

@@ -1,11 +1,12 @@
-package ma.insea.connect.chat.conversation;
+package ma.insea.connect.chat.conversation.repository;
 
 import java.util.List;
 
+import ma.insea.connect.chat.conversation.model.Conversation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import ma.insea.connect.user.User;
+import ma.insea.connect.user.DTO.User;
 
 @Repository
 public interface ConversationRepository extends JpaRepository<Conversation, String> {

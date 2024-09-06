@@ -3,17 +3,14 @@ package ma.insea.connect.drive.controller;
 
 import lombok.RequiredArgsConstructor;
 import ma.insea.connect.drive.dto.DriveItemDto;
-import ma.insea.connect.drive.dto.FolderDto;
 import ma.insea.connect.drive.dto.DriveUserDto;
 import ma.insea.connect.drive.model.DriveItem;
 import ma.insea.connect.drive.model.File;
 import ma.insea.connect.drive.model.Folder;
-import ma.insea.connect.drive.service.DriveItemServiceImpl;
-import ma.insea.connect.user.DegreePath;
-import ma.insea.connect.user.User;
+import ma.insea.connect.user.model.DegreePath;
+import ma.insea.connect.user.DTO.User;
 import ma.insea.connect.utils.Functions;
 
-import org.apache.http.protocol.HTTP;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package ma.insea.connect.chat.conversation;
+package ma.insea.connect.chat.conversation.DTO;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,7 +8,7 @@ import lombok.AllArgsConstructor;
 import java.util.Date;
 
 import ma.insea.connect.chat.common.chatMessage.DTO.ChatMessageDTO;
-import ma.insea.connect.user.Status;
+import ma.insea.connect.user.model.Status;
 import jakarta.persistence.Id;
 
 @Data

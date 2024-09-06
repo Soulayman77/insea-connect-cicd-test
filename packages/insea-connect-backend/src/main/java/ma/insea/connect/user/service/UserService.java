@@ -1,11 +1,17 @@
-package ma.insea.connect.user;
+package ma.insea.connect.user.service;
 
 
 import lombok.AllArgsConstructor;
+import ma.insea.connect.exception.userExceptions.InvalidUserDataException;
+import ma.insea.connect.exception.userExceptions.UserNotFoundException;
+import ma.insea.connect.user.DTO.OnlineDTO;
+import ma.insea.connect.user.DTO.User;
+import ma.insea.connect.user.DTO.UserDTO;
+import ma.insea.connect.user.model.Status;
+import ma.insea.connect.user.repository.UserRepository;
 import ma.insea.connect.utils.Functions;
 
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -21,22 +27,32 @@ public class UserService {
     private final Functions functions;
 
     public User saveUser(User user) {
+        if (user == null || user.getEmail() == null || user.getUsername() == null) {
+            throw new InvalidUserDataException("User data is incomplete or invalid.");
+        }
         user.setStatus(Status.ONLINE);
         userRepository.save(user);
         return user;
     }
 
     public void disconnect(User user) {
-        var storedUser = userRepository.findByEmail(user.getEmail());
-        if (storedUser != null) {
-            storedUser.setStatus(Status.OFFLINE);
-            storedUser.setLastLogin(new java.util.Date(System.currentTimeMillis()));
-            userRepository.save(storedUser);
+        if (user == null || user.getEmail() == null) {
+            throw new InvalidUserDataException("User data is incomplete or invalid.");
         }
+        var storedUser = userRepository.findByEmail(user.getEmail());
+        if (storedUser == null) {
+            throw new UserNotFoundException("User with email " + user.getEmail() + " not found.");
+        }
+        storedUser.setStatus(Status.OFFLINE);
+        storedUser.setLastLogin(new java.util.Date(System.currentTimeMillis()));
+        userRepository.save(storedUser);
     }
 
     public List<UserDTO> findAllUsers() {
         List<User> users = userRepository.findAll();
+        if (users.isEmpty()) {
+            throw new UserNotFoundException("No users found.");
+        }
         List<UserDTO> userDTOs = new ArrayList<>();
         for (User user : users) {
             UserDTO userDTO = new UserDTO(user.getId(), user.getUsername(), user.getEmail(), user.getStatus(), user.getLastLogin());
@@ -46,14 +62,16 @@ public class UserService {
     }
 
     public OnlineDTO getUserStatus(Long userId) {
-        User user = userRepository.findById(userId).orElse(null);
-        if (user != null) {
-            return new OnlineDTO(user.getStatus(), user.getLastLogin());
-        }
-        return null;
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User with ID " + userId + " not found."));
+        return new OnlineDTO(user.getStatus(), user.getLastLogin());
     }
+
     public void updateUserLastSeen(Status status) {
         User connectedUser = functions.getConnectedUser();
+        if (connectedUser == null) {
+            throw new UserNotFoundException("Connected user not found.");
+        }
         connectedUser.setLastLogin(new java.util.Date(System.currentTimeMillis()));
         connectedUser.setStatus(status);
         userRepository.save(connectedUser);
@@ -70,16 +88,17 @@ public class UserService {
             }
         }
     }
-    public User findByUsername(String username){
-        User user = userRepository.findByUsername(username).orElse(null);
-        return user;
 
+    public User findByUsername(String username) {
+        return userRepository.findByUsername(username)
+                .orElseThrow(() -> new UserNotFoundException("User with username " + username + " not found."));
     }
 
-    public User findByEmail(String email){
+    public User findByEmail(String email) {
         User user = userRepository.findByEmail(email);
+        if (user == null) {
+            throw new UserNotFoundException("User with email " + email + " not found.");
+        }
         return user;
-
     }
-
 }

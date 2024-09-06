@@ -1,8 +1,8 @@
-package ma.insea.connect.chat.group;
+package ma.insea.connect.chat.group.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ma.insea.connect.user.User;
+import ma.insea.connect.user.DTO.User;
 import lombok.AllArgsConstructor;
 
 import java.util.Date;

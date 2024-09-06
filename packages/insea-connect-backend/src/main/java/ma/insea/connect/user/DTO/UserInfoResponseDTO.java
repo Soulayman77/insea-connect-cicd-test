@@ -1,9 +1,8 @@
 package ma.insea.connect.user.DTO;
 
 import lombok.*;
-import ma.insea.connect.user.DegreePath;
-import ma.insea.connect.user.Role;
-import ma.insea.connect.user.User;
+import ma.insea.connect.user.model.DegreePath;
+import ma.insea.connect.user.model.Role;
 
 @NoArgsConstructor
 @AllArgsConstructor

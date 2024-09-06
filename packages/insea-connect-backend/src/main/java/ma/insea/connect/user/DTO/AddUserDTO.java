@@ -4,10 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ma.insea.connect.user.DegreePath;
-import ma.insea.connect.user.Role;
-import ma.insea.connect.user.Status;
-import ma.insea.connect.user.User;
+import ma.insea.connect.user.model.DegreePath;
+import ma.insea.connect.user.model.Role;
+import ma.insea.connect.user.model.Status;
 
 import java.util.ArrayList;
 import java.util.Date;

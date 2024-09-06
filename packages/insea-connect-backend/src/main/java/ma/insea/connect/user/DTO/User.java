@@ -1,4 +1,4 @@
-package ma.insea.connect.user;
+package ma.insea.connect.user.DTO;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -7,6 +7,9 @@ import ma.insea.connect.chat.conversation.model.Conversation;
 import ma.insea.connect.chat.group.model.Group;
 import ma.insea.connect.chat.group.model.Membership;
 
+import ma.insea.connect.user.model.DegreePath;
+import ma.insea.connect.user.model.Role;
+import ma.insea.connect.user.model.Status;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;

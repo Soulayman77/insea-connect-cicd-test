@@ -1,5 +1,7 @@
-package ma.insea.connect.user;
+package ma.insea.connect.user.repository;
 
+import ma.insea.connect.user.DTO.User;
+import ma.insea.connect.user.model.Status;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

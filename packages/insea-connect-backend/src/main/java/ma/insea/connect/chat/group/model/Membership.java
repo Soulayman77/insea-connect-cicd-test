@@ -1,4 +1,4 @@
-package ma.insea.connect.chat.group;
+package ma.insea.connect.chat.group.model;
 
 import java.util.Date;
 
@@ -10,7 +10,7 @@ import jakarta.persistence.MapsId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ma.insea.connect.user.User;
+import ma.insea.connect.user.DTO.User;
 
 
 
