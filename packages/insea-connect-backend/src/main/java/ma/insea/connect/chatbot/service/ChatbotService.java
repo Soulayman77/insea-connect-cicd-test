@@ -1,6 +1,8 @@
 package ma.insea.connect.chatbot.service;
 
 
+import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import ma.insea.connect.chat.common.chatMessage.DTO.ChatMessageDTO;
 import ma.insea.connect.chat.common.chatMessage.service.ChatMessageService;
@@ -29,6 +31,8 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Getter
+@Setter
 @Slf4j
 @Service
 public class ChatbotService {

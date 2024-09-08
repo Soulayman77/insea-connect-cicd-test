@@ -46,6 +46,21 @@ services:
     depends_on:
       - postgres
 
+  springboot-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      keycloack:
+        condition: service_started
+      flask-app:
+        condition: service_started
+    networks:
+      - backend
+    command: ["sh", "-c", "sleep 60 && java -jar app.jar"]  # Add a 60-second delay
+
 networks:
   backend:
     driver: bridge
